@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
+    // physics variables
     [SerializeField]
     private float m_fSpringConstant = 0.0f;
     [SerializeField]
@@ -15,8 +16,10 @@ public class PlayerInput : MonoBehaviour
     [SerializeField]
     private KeyCode m_fFlipperInput;
 
+    // hinge joint variables
     private HingeJoint m_hingeJoint = null;
     private JointSpring m_jointSpring;
+
     private void Start()
     {
         m_hingeJoint = GetComponent<HingeJoint>();

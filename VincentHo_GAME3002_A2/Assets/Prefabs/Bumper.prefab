@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7088504586539778663}
   - component: {fileID: 4653588511859911413}
   - component: {fileID: 2131058773986446853}
-  - component: {fileID: 7238256971535745572}
   m_Layer: 0
   m_Name: BumperBase
   m_TagString: Untagged
@@ -82,20 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7238256971535745572
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3667028046146204652}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &5155108059042476784
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +92,8 @@ GameObject:
   - component: {fileID: 3622330367126714973}
   - component: {fileID: 8417492665961542115}
   - component: {fileID: 4943341937945509329}
-  - component: {fileID: 5020392991661325676}
+  - component: {fileID: 2053556457002254806}
+  - component: {fileID: 7237721439287358484}
   m_Layer: 0
   m_Name: Bumper
   m_TagString: Untagged
@@ -123,8 +109,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5155108059042476784}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17808257, y: 1.054, z: 5.806789}
-  m_LocalScale: {x: 0.91, y: 0.52383626, z: 0.91}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalScale: {x: 2, y: 0.31, z: 2}
   m_Children:
   - {fileID: 7088504586539778663}
   m_Father: {fileID: 0}
@@ -179,7 +165,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5020392991661325676
+--- !u!114 &2053556457002254806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5155108059042476784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 809f70133790a644fac99e3e1e189122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &7237721439287358484
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,6 +188,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
-  m_Height: 3.558322
+  m_Height: 8.640419
   m_Direction: 1
-  m_Center: {x: 0.000000065499606, y: -0.323417, z: -0.00000009824941}
+  m_Center: {x: 0.000000059604645, y: 0.037003335, z: -0.00000011920929}
