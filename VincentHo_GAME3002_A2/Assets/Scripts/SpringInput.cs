@@ -25,7 +25,7 @@ public class SpringInput : MonoBehaviour
     void Start()
     {
         m_fPullPosition = -0.5f;
-        m_attachedRB.transform.localPosition = new Vector3(0.0f, 0.1f, m_fPullPosition);
+        m_attachedRB.transform.localPosition = new Vector3(0.0f, 0.0f, m_fPullPosition);
         m_attachedRB.isKinematic = true; // set it so the attached body doesn't move at the start
         m_vRestPosition = gameObject.transform.position; // rest position will be where the collision box is
     }
@@ -42,7 +42,7 @@ public class SpringInput : MonoBehaviour
                 m_fPullPosition = m_tPullTransform.localPosition.z;
                 Debug.Log(m_tPullTransform.localPosition.z);
             }
-            m_attachedRB.transform.localPosition = new Vector3(0.0f, 0.1f, m_fPullPosition);
+            m_attachedRB.transform.localPosition = new Vector3(0.0f, 0.0f, m_fPullPosition);
         }
         if (Input.GetKeyUp(m_input))
         {
@@ -71,14 +71,5 @@ public class SpringInput : MonoBehaviour
     private void OnDrawGizmos()
     {
         
-    }
-
-    // event when the key is pressed
-    void OnKeyPressed()
-    {
-    }
-
-    void OnKeyReleased()
-    {   
     }
 }
