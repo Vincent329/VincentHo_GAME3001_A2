@@ -8,15 +8,16 @@ public class BumperReflect : MonoBehaviour
     private float bumpForce;
     private Ball ball;
 
+    [SerializeField]
+    private int scoreValue; // Different score values for each bumper
+
     private void Start()
     {
         ball = FindObjectOfType<Ball>();
     }
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Hit");
         Vector3 collisionNormal = other.contacts[0].normal;
-        Debug.Log(collisionNormal);
         Rigidbody ballHit = other.gameObject.GetComponent<Rigidbody>();
         Vector3 oldVel = ball.GetOldVelocity();
         Vector3 contactVelocity = Vector3.Reflect(oldVel, collisionNormal); // use the old velocity instead of current velocity
@@ -28,8 +29,7 @@ public class BumperReflect : MonoBehaviour
             Debug.DrawLine(other.transform.position, other.transform.position + contactVelocity.normalized, Color.green, 3f);
         }
 
-        ballHit.AddForce(contactVelocity, ForceMode.VelocityChange);
-        ballHit.velocity *= bumpForce; // add force along the normal 
+        ballHit.AddForce(contactVelocity * bumpForce, ForceMode.VelocityChange);
 
         StartCoroutine(Extend());
     }
@@ -40,8 +40,6 @@ public class BumperReflect : MonoBehaviour
         gameObject.transform.localScale += new Vector3(0.1f, 0.0f, 0.1f);
         yield return new WaitForSeconds(0.1f);
         transform.localScale = previousScale;
-
-
     }
 
 }

@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bumpForce: 5
+  scoreValue: 0
 --- !u!136 &7237721439287358484
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -189,6 +190,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
-  m_Height: 8.640419
+  m_Height: 10.564765
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0.037003335, z: -0.00000011920929}
+  m_Center: {x: 0.000000059604645, y: -0.92516255, z: -0.00000011920929}
