@@ -7,7 +7,12 @@ public class BumperNormalBounce : MonoBehaviour
     [SerializeField]
     private float bumpForce;
 
-    private Ball ball;
+    [SerializeField]
+    private ScoreManager scoreManager;
+    private Ball ball; // getting a reference to ball in order to access the ball's velocity before collision
+    
+    [SerializeField]
+    private int scoreValue; // Different score values for each bumper
 
     private void Start()
     {

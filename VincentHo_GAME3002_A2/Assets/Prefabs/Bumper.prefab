@@ -178,7 +178,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bumpForce: 5
-  scoreValue: 0
+  scoreManager: {fileID: 0}
+  scoreValue: 15
 --- !u!136 &7237721439287358484
 CapsuleCollider:
   m_ObjectHideFlags: 0
