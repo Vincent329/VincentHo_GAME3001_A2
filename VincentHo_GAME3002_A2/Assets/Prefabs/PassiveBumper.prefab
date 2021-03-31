@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809f70133790a644fac99e3e1e189122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bumpForce: 0.2
+  bumpForce: 0.5
   scoreManager: {fileID: 0}
   scoreValue: 5
 --- !u!136 &3382160218056662560

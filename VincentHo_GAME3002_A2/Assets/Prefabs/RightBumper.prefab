@@ -1171,6 +1171,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bumpForce: 10
+  scoreManager: {fileID: 0}
+  scoreValue: 10
 --- !u!1 &8613737833075732159
 GameObject:
   m_ObjectHideFlags: 0

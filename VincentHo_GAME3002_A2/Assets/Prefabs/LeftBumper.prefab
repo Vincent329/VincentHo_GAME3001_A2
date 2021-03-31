@@ -1267,3 +1267,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bumpForce: 10
+  scoreManager: {fileID: 0}
+  scoreValue: 10

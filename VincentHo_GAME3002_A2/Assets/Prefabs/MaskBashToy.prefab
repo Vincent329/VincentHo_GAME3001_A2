@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7369676375752671609}
   - component: {fileID: 7369676375752671608}
+  - component: {fileID: 407484766912288600}
   m_Layer: 0
   m_Name: MaskBashToy
   m_TagString: Untagged
@@ -158,3 +159,18 @@ CapsuleCollider:
   m_Height: 2.83
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &407484766912288600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7369676375752671610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 809f70133790a644fac99e3e1e189122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bumpForce: 0
+  scoreManager: {fileID: 0}
+  scoreValue: 25

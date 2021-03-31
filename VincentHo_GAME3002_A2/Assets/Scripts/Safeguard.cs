@@ -11,6 +11,9 @@ public class Safeguard : MonoBehaviour
     [SerializeField]
     private bool m_bTrigger;
 
+    [SerializeField]
+    private ScoreManager scoreManager;
+
     private Vector3 newPos;
 
     // Start is called before the first frame update
@@ -40,6 +43,10 @@ public class Safeguard : MonoBehaviour
         Debug.Log("triggering mechanism");
         m_bTrigger = !m_bTrigger;
         StartCoroutine(Reset());
+        if (gameObject.tag == "Lose")
+        {
+            scoreManager.UpdateLife();
+        }
     }
 
     IEnumerator Reset()

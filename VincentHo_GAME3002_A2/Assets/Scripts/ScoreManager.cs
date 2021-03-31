@@ -7,16 +7,22 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField]
-    private int score;
+    private int m_iScore;
+    [SerializeField]
+    private int m_iLife;
 
     [SerializeField]
     private TextMeshPro scoreText;
+    [SerializeField]
+    private TextMeshPro lifeText;
+
     // Start is called before the first frame update
     void Start()
     {
-        score = 0;
-        scoreText = GetComponent<TextMeshPro>();
-        Assert.IsNotNull(scoreText, "No TMP applied");
+        m_iScore = 0;
+        m_iLife = 3;
+        Assert.IsNotNull(scoreText, "No Score TMP applied");
+        Assert.IsNotNull(lifeText, "No Life TMP applied");
         ScoreToText();
     }
 
@@ -26,12 +32,19 @@ public class ScoreManager : MonoBehaviour
 
     public void UpdateScore(int scoreValue)
     {
-        score += scoreValue;
+        m_iScore += scoreValue;
+        ScoreToText();
+    }
+
+    public void UpdateLife()
+    {
+        m_iLife--;
         ScoreToText();
     }
 
     void ScoreToText()
     {
-        scoreText.text = "Score: " + score;
+        scoreText.text = "Score: " + m_iScore;
+        lifeText.text = "Pinballs Remaining: " + m_iLife;
     }
 }
