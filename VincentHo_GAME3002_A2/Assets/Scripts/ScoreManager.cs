@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class ScoreManager : MonoBehaviour
@@ -36,6 +37,10 @@ public class ScoreManager : MonoBehaviour
     {
         m_iLife--;
         ScoreToText();
+        if (m_iLife <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     void ScoreToText()

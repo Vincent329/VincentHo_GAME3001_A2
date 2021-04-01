@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void loadNextScene()
     {
-        
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex; // within the scene manager class, run method of GetActiveScene, find out the current build index
+        SceneManager.LoadScene(currentSceneIndex + 1); // loading the next scene
     }
 
-    // Update is called once per frame
-    void Update()
+    public void loadStartScene()
     {
-        
+        SceneManager.LoadScene(0);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit(); // only works in a standalone build, not in the editor
     }
 }
