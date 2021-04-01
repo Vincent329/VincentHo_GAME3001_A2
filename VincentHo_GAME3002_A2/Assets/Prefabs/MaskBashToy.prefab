@@ -174,3 +174,4 @@ MonoBehaviour:
   bumpForce: 0
   scoreManager: {fileID: 0}
   scoreValue: 25
+  hitSound: {fileID: 8300000, guid: 5d46b2f7b0d675d4b9e46ff958386be7, type: 3}

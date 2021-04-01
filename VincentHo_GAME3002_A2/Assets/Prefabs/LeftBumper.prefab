@@ -1269,3 +1269,4 @@ MonoBehaviour:
   bumpForce: 10
   scoreManager: {fileID: 0}
   scoreValue: 10
+  hitSound: {fileID: 8300000, guid: 55301c815c57eac459e4b1df430a3714, type: 3}

@@ -350,6 +350,7 @@ MonoBehaviour:
   bumpForce: 5
   scoreManager: {fileID: 0}
   scoreValue: 15
+  hitSound: {fileID: 8300000, guid: 57d599ab023eec0458318ffbf1ff43c8, type: 3}
 --- !u!136 &7237721439287358484
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -16,13 +16,15 @@ public class BumperReflect : MonoBehaviour
 {
     [SerializeField]
     private float bumpForce;
-
     [SerializeField]
     private ScoreManager scoreManager;
-    private Ball ball; // getting a reference to ball in order to access the ball's velocity before collision
 
+    private Ball ball; // getting a reference to ball in order to access the ball's velocity before collision
+   
     [SerializeField]
     private int scoreValue; // Different score values for each bumper
+    [SerializeField]
+    private AudioClip hitSound; // Sound Effect on collision
 
     private void Start()
     {
@@ -36,7 +38,7 @@ public class BumperReflect : MonoBehaviour
         Vector3 contactVelocity = Vector3.Reflect(oldVel, collisionNormal); // use the old velocity instead of current velocity
         
         ballHit.AddForce(contactVelocity * bumpForce, ForceMode.VelocityChange);
-
+        AudioSource.PlayClipAtPoint(hitSound, gameObject.transform.position);
         StartCoroutine(Extend());
         scoreManager.UpdateScore(scoreValue);
     }

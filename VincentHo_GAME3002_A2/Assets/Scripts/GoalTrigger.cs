@@ -10,8 +10,13 @@ public class GoalTrigger : MonoBehaviour
     [SerializeField]
     private ScoreManager scoreManager;
 
+    [SerializeField]
+    private AudioClip triggerSound;
+
     private void OnTriggerEnter(Collider other)
     {
         scoreManager.UpdateScore(scoreValue);
+        AudioSource.PlayClipAtPoint(triggerSound, gameObject.transform.position);
+
     }
 }

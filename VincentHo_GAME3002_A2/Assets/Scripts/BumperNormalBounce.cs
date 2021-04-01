@@ -14,6 +14,9 @@ public class BumperNormalBounce : MonoBehaviour
     [SerializeField]
     private int scoreValue; // Different score values for each bumper
 
+    [SerializeField]
+    private AudioClip hitSound; // Sound Effect on collision
+
     private void Start()
     {
         ball = FindObjectOfType<Ball>();
@@ -22,10 +25,9 @@ public class BumperNormalBounce : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         Rigidbody ballHit = other.gameObject.GetComponent<Rigidbody>();
-
         Vector3 forceDirection = -other.contacts[0].normal;
-
         ballHit.AddForce(forceDirection * bumpForce, ForceMode.VelocityChange);
+        AudioSource.PlayClipAtPoint(hitSound, Camera.main.transform.position);
         StartCoroutine(Extend());
         scoreManager.UpdateScore(scoreValue);
     }
