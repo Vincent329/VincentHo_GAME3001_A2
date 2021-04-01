@@ -1,7 +1,7 @@
 /*
  ----------- Developer's Notes ------------
  The only purpose of this script is to keep track of the velocity of the previous frame
- This velocity is then used
+ This velocity is then used in the bumper scripts to calculate the reflected velocity off of collision
  */
 
 
@@ -22,11 +22,11 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        oldVelocity = m_rb.velocity;
+        oldVelocity = m_rb.velocity; // for every previous frame, we keep track of the old velocity
     }
 
     public Vector3 GetOldVelocity()
     {
-        return oldVelocity;
+        return oldVelocity; // getter for the old velocity
     }
 }
