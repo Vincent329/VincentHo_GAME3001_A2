@@ -9,7 +9,6 @@ public class AccelBall : MonoBehaviour
         if (other.gameObject.layer == 3)
         {
             // contact
-            Debug.Log("Contact");
             Rigidbody refBody = other.gameObject.GetComponent<Rigidbody>();
             refBody.AddForce(Vector3.right * 5);
         }

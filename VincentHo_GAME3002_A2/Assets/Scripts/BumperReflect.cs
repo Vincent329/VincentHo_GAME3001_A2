@@ -1,7 +1,10 @@
 /*
 ------- Developer's notes ---------
 This script is attached to the bumper object prefabs in the scene
-Black Bumpers utilize the reflected 
+Black Bumpers utilize the reflected function to reflect off the contact normal
+    - the score value for the black bumpers is set to 10
+    - Bumper force is set to 1 in the Inspector so the magnitude of the velocity will stay the same after collision
+
  */
 
 
@@ -32,13 +35,6 @@ public class BumperReflect : MonoBehaviour
         Vector3 oldVel = ball.GetOldVelocity();
         Vector3 contactVelocity = Vector3.Reflect(oldVel, collisionNormal); // use the old velocity instead of current velocity
         
-        //foreach (var point in other.contacts)
-        //{
-        //    Debug.DrawLine(other.transform.position, other.transform.position - oldVel.normalized , Color.red, 3f);
-        //    Debug.DrawLine(point.point, point.point - point.normal, Color.blue, 3f);
-        //    Debug.DrawLine(other.transform.position, other.transform.position + contactVelocity.normalized, Color.green, 3f);
-        //}
-
         ballHit.AddForce(contactVelocity * bumpForce, ForceMode.VelocityChange);
 
         StartCoroutine(Extend());

@@ -26,10 +26,6 @@ public class ScoreManager : MonoBehaviour
         ScoreToText();
     }
 
-    private void Update()
-    {
-    }
-
     public void UpdateScore(int scoreValue)
     {
         m_iScore += scoreValue;

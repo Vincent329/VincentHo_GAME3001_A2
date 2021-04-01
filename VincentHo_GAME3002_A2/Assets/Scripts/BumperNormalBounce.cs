@@ -23,17 +23,11 @@ public class BumperNormalBounce : MonoBehaviour
     {
         Rigidbody ballHit = other.gameObject.GetComponent<Rigidbody>();
 
-        Vector3 forceDirection = -other.contacts[0].normal;//(collision.transform.position - gameObject.transform.position).normalized;
-
-        foreach (var point in other.contacts)
-        {
-            Debug.DrawLine(other.transform.position, other.transform.position - ball.GetOldVelocity().normalized, Color.red, 3f);
-            Debug.DrawLine(point.point, point.point - point.normal, Color.blue, 3f);
-        }
+        Vector3 forceDirection = -other.contacts[0].normal;
 
         ballHit.AddForce(forceDirection * bumpForce, ForceMode.VelocityChange);
         StartCoroutine(Extend());
-
+        scoreManager.UpdateScore(scoreValue);
     }
 
     IEnumerator Extend()

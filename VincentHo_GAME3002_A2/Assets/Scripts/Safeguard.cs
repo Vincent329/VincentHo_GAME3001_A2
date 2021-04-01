@@ -1,3 +1,11 @@
+/*
+ ---------- Developer's notes ------------
+This script is attached to two different trigger boxes
+ 1) at the end of the plunger chamber
+ 2) situated along the ramp at the dead zone (triggering a loss of life condition)
+ 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,7 +29,6 @@ public class Safeguard : MonoBehaviour
     {
         m_bTrigger = false;
         newPos = m_vLerpPos.position;
-        Debug.Log("NewPos: " + newPos);
     }
 
     // Update is called once per frame
@@ -40,7 +47,6 @@ public class Safeguard : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("triggering mechanism");
         m_bTrigger = !m_bTrigger;
         StartCoroutine(Reset());
         if (gameObject.tag == "Lose")
