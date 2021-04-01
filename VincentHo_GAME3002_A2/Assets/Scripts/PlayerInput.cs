@@ -16,6 +16,9 @@ public class PlayerInput : MonoBehaviour
     [SerializeField]
     private KeyCode m_fFlipperInput;
 
+    [SerializeField]
+    private AudioClip flipperSound;
+
     // hinge joint variables
     private HingeJoint m_hingeJoint = null;
     private JointSpring m_jointSpring;
@@ -47,14 +50,13 @@ public class PlayerInput : MonoBehaviour
     private void OnFlipperPressedInternal()
     {
         m_jointSpring.targetPosition = m_fPressedPos;
-        // update the joint
         m_hingeJoint.spring = m_jointSpring;
+        AudioSource.PlayClipAtPoint(flipperSound, gameObject.transform.position);
     }
 
     private void OnFlipperReleasedInternal()
     {
         m_jointSpring.targetPosition = m_fOriginalPos;
-        // update the joint
         m_hingeJoint.spring = m_jointSpring;
     }
 }
